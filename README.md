@@ -7,7 +7,9 @@ Just set `BUTTON_BOX = False` to remove it.
 
 <p align="center">
 
-<img src="https://github.com/rockNroll87q/Retinotopy_mapping_stimuli/blob/master/examples/eccentricity.gif" width="200" height="200" />  <img src="https://github.com/rockNroll87q/Retinotopy_mapping_stimuli/blob/master/examples/moving_bars.gif" width="200" height="200" /> <img src="https://github.com/rockNroll87q/Retinotopy_mapping_stimuli/blob/master/examples/polar_angle.gif" width="200" height="200" />
+<img src="https://github.com/rockNroll87q/Retinotopy_mapping_stimuli/blob/master/examples/eccentricity.gif" width="200" height="200" />  
+<img src="https://github.com/rockNroll87q/Retinotopy_mapping_stimuli/blob/master/examples/moving_bars.gif" width="200" height="200" /> 
+<img src="https://github.com/rockNroll87q/Retinotopy_mapping_stimuli/blob/master/examples/polar_angle.gif" width="200" height="200" />
 
 </p>
 
