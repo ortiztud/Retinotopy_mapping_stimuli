@@ -16,7 +16,7 @@ Just set `BUTTON_BOX = False` to remove it.
 
 ## Requirements
 
-Not particular requirement are needed, except common python packages with Psychopy (Numpy, Scipy, sklearn, skopt).
+Not particular requirement are needed, except common python packages with Psychopy (Numpy, Scipy).
 It should work with Python2 and Python3.
 
 
