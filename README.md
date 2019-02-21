@@ -1,4 +1,4 @@
-# Retinotopy_mapping_stimuli
+# Retinotopy mapping stimuli
 
 Ptyhon code for visual stimuli for fMRI Retinotopy mapping: edges, polar angle, and eccentricity 
 
