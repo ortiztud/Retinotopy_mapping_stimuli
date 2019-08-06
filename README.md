@@ -1,6 +1,6 @@
 # Retinotopy mapping stimuli
 
-Ptyhon code for visual stimuli for fMRI Retinotopy mapping: edges, polar angle, and eccentricity 
+Ptyhon code for visual stimuli for fMRI Retinotopy mapping: moving bars, polar angle, and eccentricity 
 
 The code includes the `pypixxlib` library to manage the Toolbox by VPixx Technologies.
 Just set `BUTTON_BOX = False` to remove it.
