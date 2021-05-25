@@ -6,6 +6,11 @@ Retinotopic mapping: moving bars
 
 Author: Michele Svanera
 Nov. 2017
+Modified by: Javier Ortiz-Tudela
+May. 2021
+
+- May 2021: The script will now wait for either a "t" or a "5" press.
+- May 2021: The scripts will now prompt the user for participant info (credits to @felix_non for the first version.)
 """
 
 ################################################################################################################
@@ -13,7 +18,7 @@ Nov. 2017
 
 from __future__ import division
 
-from psychopy import visual, event, core, logging
+from psychopy import visual, event, core, logging, gui
 #from psychopy import gui  #fetch default gui handler (qt if available)
 from psychopy import prefs as pyschopy_prefs
 
@@ -60,8 +65,8 @@ Bar_orientation_order = np.array([1, 6, 3, 8, 5, 2, 7, 4])-1
 
 # Fixation
 Rotating_cross = False
-Color_change_cross = False
-Color_change_rate = 2                           # sec
+Color_change_cross = True
+Color_change_rate = 15                           # sec
 Rotation_cross_rate = 0.05                      # revs per sec
 
 # Spyder network
@@ -273,7 +278,7 @@ def main(win, globalClock):
             if(button_state['state'][-1]==0):
                 break
     else:
-        event.waitKeys()    #pause until there's a keypress
+        event.waitKeys(keyList = ['5','t'])    #pause until 5 or t is pressed (scanner trigger)
   
     
     # Wait Pre_post_stimuli_fixation_time before stimuli
@@ -371,14 +376,19 @@ def main(win, globalClock):
 
 if __name__ == "__main__":  
     
+    # Open a dialog window and promt for participant info
+    myDlg = gui.Dlg(title=" ")
+    myDlg.addText('Participant info')
+    myDlg.addField('Subject code:')
+    myDlg.addField('Operator')
+    participant_info = myDlg.show()
+    
     # Experiment variables
     today_date = dt.today().strftime('%Y-%m-%d')        # Date (mm/dd/yy)
-    operator = 'MS'                                     # Operator
-    DEBUG_MODE = False                                  # Debug mode
-    BUTTON_BOX = True                                   # Button box monitoring
-    subject_code = 'NIA14'                              # Subject-code
-    subject_age = 18                                    # Age
-    subject_gender = 'female'                           # Gender
+    operator = participant_info[1]                                    # Operator
+    DEBUG_MODE = False                                   # Debug mode
+    BUTTON_BOX = False                                   # Button box monitoring
+    subject_code = participant_info[0]                            # Subject-code
 
     # Prepare out folder
     path_out = Dir_save + today_date + '_' + subject_code + '_bars'
@@ -396,7 +406,7 @@ if __name__ == "__main__":
     logging.data(pyschopy_prefs)
     logging.data("Saving in folder: " + path_out)
     logging.data("Operator: " + operator + "\n")    
-    logging.data("Subject. Code: " + subject_code + " - Age: " + str(subject_age) + " - Gender: " + subject_gender) 
+    logging.data("Subject. Code: " + subject_code) 
     logging.data('***** Starting *****')
 
     # Create and start buttonBox thread
